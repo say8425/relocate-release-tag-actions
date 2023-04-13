@@ -1,0 +1,18 @@
+name: aws-secrets-manager-actions
+author: Cheon Park
+description: GitHub Actions that automatically adds or relocates Git tags (e.g. `v1` and `v1.2`) to your repository when a new release is created with a new Semantic Versioning tag (e.g. `v1.2.3`), using the recommended way on GitHub.
+
+inputs:
+  github_token:
+    description: The token used to make requests to the GitHub API. It's NOT used to make commits and should not be changed.
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: node16
+  main: dist/main.js
+
+branding:
+  icon: tag
+  color: green
+
